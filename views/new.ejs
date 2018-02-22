@@ -1,0 +1,49 @@
+<% include ./partials/header %>
+
+  <div class="container mt-5 pt-5 text-center">
+    <h1>Add New Employee</h1>
+  </div>
+
+    <div class="container mt-5 pt-5 d-flex justify-content-center">
+      <form action="/items" method="POST">
+        <div class="form-row">
+          <div class="form-group col-6">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" name="item[firstName]" placeholder="Ramza">
+          </div>
+          <div class="form-group col-6">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" name="item[lastName]" placeholder="Beoulve">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-12">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="item[email]" placeholder="RamzaBeoulve@gmail.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-12">
+            <label for="department">Department</label>
+            <select class="form-control" name="item[department]">
+              <option selected>Choose...</option>
+              <option value="Human Resources">Human Resources</option>
+              <option value="Research and Development">Research and Development</option>
+              <option value="Marketing">Marketing</option>
+              <option value="IT">IT</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="item[hiredBefore]" value="Yes">
+            <label class="form-check-label" for="hiredBefore">Hired Before 2015?</label>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary mt-5" type="submit">Register</button>
+        </div>
+      </form>
+    </div>
+    
+<% include ./partials/footer %>

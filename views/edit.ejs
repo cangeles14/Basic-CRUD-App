@@ -1,0 +1,57 @@
+<% include ./partials/header %>
+
+  <div class="container mt-5 pt-5 text-center">
+    <h1>Edit Employee</h1>
+  </div>
+
+    <div class="container mt-5 pt-5 d-flex justify-content-center">
+      <form action="/items/<%= item._id %>?_method=PUT" method="POST">
+        <div class="form-row">
+          <div class="form-group col-6">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" name="item[firstName]" value="<%= item.firstName %>">
+          </div>
+          <div class="form-group col-6">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" name="item[lastName]" value="<%= item.lastName %>">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-12">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="item[email]" value="<%= item.email %>">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-12">
+            <label for="department">Department</label>
+            <select class="form-control" name="item[department]">
+              <option selected disabled>Currently in <%= item.department %></option>
+              <option value="Human Resources">Human Resources</option>
+              <option value="Research and Development">Research and Development</option>
+              <option value="Marketing">Marketing</option>
+              <option value="IT">IT</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-12">
+            <label for="hiredBefore">Hired Before 2015?</label>
+            <select class="form-control" name="item[hiredBefore]">
+              <option selected disabled>Currently <%= item.hiredBefore %></option>
+              <option value="Yes">Hired Before 2015</option>
+              <option value="No">Not Hired Before 2015</option>
+            </select>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary mt-5" type="submit">Edit</button>
+        </div>
+      </form>
+    </div>
+
+
+
+
+
+<% include ./partials/footer %>

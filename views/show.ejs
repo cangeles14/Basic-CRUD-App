@@ -1,0 +1,44 @@
+<% include ./partials/header %>
+
+  <div class="container mt-5 pt-5 text-center">
+    <h1><%= item.firstName %> <%= item.lastName %></h1>
+  </div>
+
+    <div class="container text-center mt-5">
+      <div class="row">
+        <div class="col">
+          <p><%= item.firstName %> <%= item.lastName %></p>
+        </div>
+      </div>
+      
+        <div class="row">
+          <div class="col">
+            <p><%= item.email %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p><%= item.department %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <% if (item.hiredBefore === "Yes") { %>
+              <p><%= item.firstName %> <%= item.lastName %> was hired before 2015</p>
+            <% } else { %>
+              <p><%= item.firstName %> <%= item.lastName %> was not hired before 2015</p>
+            <% } %>
+          </div>
+        </div>
+
+      <div class="text-center row mb-5 d-inline">
+        <a class="btn btn-primary" href="/items/<%= item._id %>/edit">Edit Employee</a>
+      </div>
+      
+      <form class="form-group d-inline ml-5" action="/items/<%= item._id %>?_method=DELETE" method="POST">
+        <button class="btn btn-danger" type="submit">Remove Employee</button>
+      </form>
+    </div>
+
+
+<% include ./partials/footer %>

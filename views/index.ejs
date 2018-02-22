@@ -1,0 +1,34 @@
+<% include ./partials/header %>
+    
+    <div class="container text-center" style="margin-top: 6rem">
+      <h1>Employee Database</h1>
+    </div>
+    
+    <div class="container mb-5 mt-5">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Email</th>
+            <th scope="col">Department</th>
+            <th scope="col">Hired Before 2015</th>
+            <th scope="col">More Info</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% item.forEach(function(item){ %>
+            <tr>
+              <td> <%= item.firstName %> </td>
+              <td> <%= item.lastName %> </td>
+              <td> <%= item.email %> </td>
+              <td> <%= item.department %> </td>
+              <td> <%= item.hiredBefore %> </td>
+              <td> <a class="btn btn-primary" href="/items/<%= item._id %>" role="button">Info</a> </td>
+            </tr>
+          <% }) %>
+        </tbody>
+    </table>
+  </div>
+
+<% include ./partials/footer %>
