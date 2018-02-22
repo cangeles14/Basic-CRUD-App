@@ -1,10 +1,11 @@
 //Dependencies
-var express = require('express'),
-    mongoose = require('mongoose'),
-    bodyParser = require('body-parser'),
-    methodOverride = require('method-override'),
+var express         = require('express'),
+    mongoose        = require('mongoose'),
+    bodyParser      = require('body-parser'),
+    dotenv          = require('dotenv'),
+    methodOverride  = require('method-override'),
     Item            = require("./models/item"),
-    app = express();
+    app             = express();
 
 //MongoDB Setup
 var url = process.env.DATABASEURL || "mongodb://localhost/finder_app";
@@ -14,6 +15,7 @@ mongoose.connect(url);
 app.set("view engine", "ejs");
 
 //Run/Use Express variables
+require('dotenv').config();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(express.static(__dirname + "/public"));
