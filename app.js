@@ -11,6 +11,7 @@ var express         = require('express'),
 var url = process.env.DATABASEURL || "mongodb://localhost/finder_app";
 mongoose.connect(url);
 
+
 //View Engine
 app.set("view engine", "ejs");
 
