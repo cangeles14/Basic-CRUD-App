@@ -7,7 +7,8 @@ var express = require('express'),
     app = express();
 
 //MongoDB Setup
-mongoose.connect("mongodb://localhost/finder_app");
+var url = process.env.DATABASEURL || "mongodb://localhost/finder_app";
+mongoose.connect(url);
 
 //View Engine
 app.set("view engine", "ejs");
