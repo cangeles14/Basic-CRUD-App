@@ -2,10 +2,19 @@
     
     <div class="container text-center" style="margin-top: 6rem">
       <h1>Employee Database</h1>
+    
+    <div class="container mt-3">
+      <form class="form-inline justify-content-center">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Employee" aria-label="Search" id="search">
+        <button class="btn btn-outline-success my-2 my-sm-0">Refresh</button>
+      </form>
     </div>
     
-    <div class="container mb-5 mt-5">
-      <table class="table table-striped">
+    </div>
+    
+    
+    <div class="container mb-5 mt-5 table-responsive">
+      <table class="table table-striped" id="table">
         <thead>
           <tr>
             <th scope="col">First</th>
@@ -24,7 +33,7 @@
               <td> <%= item.email %> </td>
               <td> <%= item.department %> </td>
               <td> <%= item.hiredBefore %> </td>
-              <td> <a class="btn btn-primary" href="/items/<%= item._id %>" role="button">Info</a> </td>
+              <td> <a class="btn btn-outline-primary my-2 my-sm-0" href="/items/<%= item._id %>" role="button">Info</a> </td>
             </tr>
           <% }) %>
         </tbody>
